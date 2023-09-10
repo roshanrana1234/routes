@@ -10,6 +10,8 @@ import SmartWatch from "./pages/SmartWatch";
 import Mobile from "./pages/Mobile";
 import Cloth from "./pages/Cloth";
 import NoMatch from "./pages/NoMatch";
+import User from "./pages/User";
+import DetailPage from "./pages/DetailPage";
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
           <Route path="mobile" element={<Mobile />} />
           <Route path="cloth" element={<Cloth />} />
         </Route>
+        <Route path="users" element={<User />} />
+        <Route path="users/:userID" element={<DetailPage />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </>
