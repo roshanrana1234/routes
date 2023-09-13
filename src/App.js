@@ -1,36 +1,41 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import NabBar from "./components/NabBar";
-import SummaryPage from "./pages/SummaryPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import Header from "./components/Header";
+import SuccessFull from "./pages/SuccessFull";
+import PageNotFound from "./components/PageNotFound";
 import Products from "./pages/Products";
 import Laptop from "./pages/Laptop";
-import SmartWatch from "./pages/SmartWatch";
 import Mobile from "./pages/Mobile";
 import Cloth from "./pages/Cloth";
-import NoMatch from "./pages/NoMatch";
-import User from "./pages/User";
-import DetailPage from "./pages/DetailPage";
+import Students from "./pages/Students";
+import Detail from "./pages/Detail";
 
 const App = () => {
   return (
     <>
-      <NabBar />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="summary" element={<SummaryPage />} />
-        <Route path="products" element={<Products />}>
-          <Route index element={<Mobile />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="success" element={<SuccessFull />} />
+        <Route path="*" element={<PageNotFound />} />
+
+        {/* Nested Routing   */}
+        <Route path="product" element={<Products />}>
+          <Route index element={<Laptop />} />
           <Route path="laptop" element={<Laptop />} />
-          <Route path="watch" element={<SmartWatch />} />
           <Route path="mobile" element={<Mobile />} />
           <Route path="cloth" element={<Cloth />} />
         </Route>
-        <Route path="users" element={<User />} />
-        <Route path="users/:userID" element={<DetailPage />} />
-        <Route path="*" element={<NoMatch />} />
+        {/* /product/cloth */}
+
+        {/* Dynamic route */}
+        <Route path="student" element={<Students />} />
+        <Route path="student/:studentId" element={<Detail />} />
       </Routes>
     </>
   );
@@ -38,4 +43,4 @@ const App = () => {
 
 export default App;
 
-//BrowserRouter,  Routes, Route, Nested Routing,
+// http://localhost:3000/ ==== path="/"  === (Default Page)

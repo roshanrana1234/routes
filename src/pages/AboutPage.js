@@ -1,7 +1,6 @@
 import React from "react";
-import NabBar from "../components/NabBar";
 
-const About = () => {
+const AboutPage = () => {
   return (
     <>
       <div>This is About Page</div>
@@ -9,4 +8,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;

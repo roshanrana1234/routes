@@ -1,28 +1,28 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   return (
     <>
-      <div className="flex flex-col gap-4 w-full justify-start items-center bg-green-800 h-96">
-        <h1> Our Products</h1>
-        <nav className="w-10/12 ">
-          <ul className="flex justify-between bg-blue-200 p-4">
-            <Link to="laptop">
-              <li className="px-4 py-2 rounded bg-yellow-400 ">Laptop</li>
-            </Link>
-            <Link to="mobile">
-              <li className="px-4 py-2 rounded bg-yellow-400 ">Mobile</li>
-            </Link>
-            <Link to="watch">
-              <li className="px-4 py-2 rounded bg-yellow-400 ">Smart Watch</li>
-            </Link>
-            <Link to="cloth">
-              <li className="px-4 py-2 rounded bg-yellow-400 ">Cloths</li>
-            </Link>
-          </ul>
-        </nav>
-        <div className="w-10/12 m-auto">
+      <div className="flex flex-col items-center p-4 bg-emerald-500">
+        <h1>This is Product Page</h1>
+        <ul className="flex justify-evenly bg-black text-white items-center p-3 w-full">
+          <Link to="laptop">
+            <li className="px-4 py-2 rounded border">Laptop</li>
+          </Link>
+          <Link to="mobile">
+            <li className="px-4 py-2 rounded border">Mobile</li>
+          </Link>
+          {/* Path Ek Hi hai == /product/cloth  */}
+          {/* <Link to="/product/cloth"> */}
+          {/* <Link to="/cloth"> */}
+
+          <Link to="cloth">
+            <li className="px-4 py-2 rounded border">Cloth</li>
+          </Link>
+        </ul>
+        <div className="h-96 p-4 rounded flex justify-center items-center bg-blue-400 w-full">
           <Outlet />
         </div>
       </div>
@@ -31,3 +31,6 @@ const Products = () => {
 };
 
 export default Products;
+
+// Absolute Path  == Full Path  path="/product/cloth" Start From /
+// Relative Path == Wihout /
